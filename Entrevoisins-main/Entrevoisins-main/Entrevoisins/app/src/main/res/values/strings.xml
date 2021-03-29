@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Entrevoisins</string>
+    <string name="tab_neighbour_title">My neighbours</string>
+    <string name="tab_favorites_title">Favorites</string>
+    <string name="activity_new_neighbour">New neighbour</string>
+    <string name="phone_number">06 88 41 65 08</string>
+    <string name="aboutme">Bonjour !Je souhaiterais faire de la marche nordique. Pas initiée, je recherche une ou plusieurs personnes susceptibles de m\' accompagner ! J\' aime les jeux de cartes tels la belote et le tarot.."</string>
+    <string name="address_neigh">29 rue de la croix saint Paul</string>
+    <string name="facebook">www.facebook/guillaume maginot</string>
+    <string name="name_neighbour">CAROLINE</string>
+</resources>

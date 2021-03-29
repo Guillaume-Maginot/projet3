@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.neighbour_list.ShowNeighbourActivity">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:translationY="-150dp"
+                app:srcCompat="@drawable/shutterstock_image_voisinage" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/retourliste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:translationX="10dp"
+                android:translationY="-520dp"
+                app:backgroundTint="#FFFFFF"
+                app:srcCompat="@drawable/ic_return" />
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:translationY="-55dp"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <!-- A CardView that contains a TextView -->
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/add_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="285dp"
+                android:layout_marginTop="-380dp"
+                android:backgroundTint="#FFC107"
+                app:srcCompat="@drawable/ic_star_white_24dp" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/mNameuser"
+            android:layout_width="380dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="15dp"
+            android:text="Caroline"
+            android:touchscreenBlocksFocus="true"
+            app:cardCornerRadius="20dp">
+
+            <TextView
+                android:id="@+id/firstname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="-100dp"
+                android:text="@string/name_neighbour"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="30dp"
+                app:srcCompat="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/address_neigh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+
+                android:padding="30dp"
+                android:text="@string/address_neigh" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="52dp"
+                android:padding="28dp"
+                app:srcCompat="@drawable/ic_phone" />
+
+            <TextView
+                android:id="@+id/phoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="82dp"
+                android:padding="10dp"
+                android:text="@string/phone_number" />
+
+            </android.support.v7.widget.CardView>
+
+        <!-- A CardView that contains a TextView -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/loisir_neighbour"
+                android:layout_width="380dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="20dp">
+
+                <TextView
+                    android:id="@+id/loisir"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="20dp"
+                    android:text="A propos de moi"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/aboutme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foregroundTint="#2B2B2B"
+                    android:padding="20dp"
+                    android:text="@string/aboutme"
+                    android:translationY="50dp" />
+
+            </android.support.v7.widget.CardView>
+
+//</LinearLayout>
+</android.support.constraint.ConstraintLayout>
