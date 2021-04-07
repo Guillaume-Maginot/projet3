@@ -56,14 +56,15 @@ favoris.
 
 ● Phase 3 : Création d’un test unitaire pour chaque fonctionnalité
 
-_Fichier tests unitaire_:  NeighbourServiceTest.java
+_Fichier tests unitaire_:  NeighbourServiceTest.java (Entrevoisins-main\Entrevoisins\app\src\test\java\com\openclassrooms\entrevoisins\service\NeighbourServiceTest.java)
 
-_Fichier tests instrumentalisés_: NeighboursListTest.java
+_Fichier tests instrumentalisés_: NeighboursListTest.java (Entrevoisins-main\Entrevoisins\app\src\androidTest\java\com\openclassrooms\entrevoisins\neighbour_list\NeighboursListTest.java)
 
 # Langage et EDI
- Java, Android Studio 4.1.3
+ Java, Android Studio 4.1.3 ( disponible à cette adresse https://developer.android.com/studio )
 
 ## Installation, exécution et compilation
 
 Entrevoisins peut s'exécuter à partir d'Android studio via émulateur ou sur smartphone physique
+Vous pouvez cliquer sur la flèche verte dans la barre d'icônes ou bien passer par le menu Run et l'option Run... raccourcis Alt+Maj+F10
 
