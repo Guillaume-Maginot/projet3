@@ -27,10 +27,12 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
+import static android.support.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static android.support.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
 import static android.support.test.espresso.matcher.ViewMatchers.isCompletelyDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withParent;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.openclassrooms.entrevoisins.utils.RecyclerViewItemCountAssertion.withItemCount;
 import static org.hamcrest.Matchers.allOf;
@@ -91,9 +93,12 @@ NeighboursListTest {
     public void checkNeighbourNameIsNotEmpty() {
         onView(allOf(withId(R.id.list_neighbours), isDisplayed()))
                 .perform(click());
+
         onView(allOf(withId(R.id.firstname), isDisplayed()))
                 .check(matches(not(withText(""))));
     }
+
+
 
     // test vérifiant qu’au clic sur le bouton de suppression, la liste d’utilisateurs compte bien un utilisateur en moins
     @Test
@@ -126,17 +131,20 @@ NeighboursListTest {
         onView(allOf(withId(R.id.retourliste), isDisplayed()))
                 .perform(click());
 
-        onView(allOf(withId(R.id.tabItem2), isDisplayed()))
-                .check(matches(hasMinimumChildCount(2)));
+        //onView(allOf(withId(R.id.tabItem2), isDisplayed()))
+        //        .check(matches(hasMinimumChildCount(2)));
+
         // On vérifie que la liste des voisins est entièrement chargée et affichée
-        onView(allOf(withId(R.id.list_neighbours), isCompletelyDisplayed()));
+        onView(allOf(withId(R.id.list_neighbours), isDisplayed()))
+                .check(matches(isDisplayed()));
+        //TODO: rajouter une vérification avec un .check(...)
 
         // On fait défiler vers la gauche le contenu de la liste (des favoris)
-        Espresso.onView(withId(R.id.container))
-                .perform(ViewActions.swipeLeft());
+        //Espresso.onView(withId(R.id.container))
+        //       .perform(ViewActions.swipeLeft());
 
-        // On vérifie qu'on a bien le nombre de favori attendu
-        onView(allOf(withId(R.id.list_neighbours), isDisplayed())).check(withItemCount(1));
+        Espresso.onView(allOf(withText("FAVORITES")))
+                .perform(ViewActions.click());
 
     }
 
