@@ -46,9 +46,7 @@ import static org.hamcrest.core.IsNull.notNullValue;
  * Test class for list of neighbours
  */
 @RunWith(AndroidJUnit4.class)
-public class
-
-NeighboursListTest {
+public class NeighboursListTest {
 
     // This is fixed
     private static int ITEMS_COUNT = 12;
