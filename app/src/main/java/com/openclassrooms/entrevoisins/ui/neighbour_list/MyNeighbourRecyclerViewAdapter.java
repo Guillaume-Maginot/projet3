@@ -54,12 +54,12 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             public void onClick(View v) {
                 EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
                 //Affichage de longue durée
-                Context context = v.getContext();
-                CharSequence text = "Hello toast!";
-                int duration = Toast.LENGTH_SHORT;
+          //      Context context = v.getContext();
+          //      CharSequence text = "Hello toast!";
+          //      int duration = Toast.LENGTH_SHORT;
 
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+          //      Toast toast = Toast.makeText(context, text, duration);
+          //      toast.show();
             }
         });
     }
