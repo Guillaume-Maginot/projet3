@@ -52,4 +52,16 @@ public class NeighbourServiceTest {
         neighbours.add(unVoisin);
         assertEquals(count + 1, neighbours.size());
     }
+
+    @Test
+    public void addFavoriteWithSuccess() {
+        int count = 0;
+        count = service.getNeighbours().size();
+
+        Neighbour unVoisin = new Neighbour(999, "toto","bibi","123456789","youpi", "chabaglou");
+        unVoisin.setIsFavorite(true);
+        List<Neighbour> neighbours = service.getNeighbours();
+        neighbours.add(unVoisin);
+        assertEquals(count + 1, neighbours.size());
+    }
 }

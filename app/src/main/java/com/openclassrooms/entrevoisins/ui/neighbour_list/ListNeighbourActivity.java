@@ -40,27 +40,6 @@ public class ListNeighbourActivity extends AppCompatActivity {
         mPagerAdapter = new ListNeighbourPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mPagerAdapter);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
-        //mTabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
-
-/*        mTabLayout.setOnTabSelectedListener(
-                new TabLayout.ViewPagerOnTabSelectedListener(mViewPager) {
-                    @Override
-                    public void onTabSelected(TabLayout.Tab tab) {
-                        super.onTabSelected(tab);
-                        int numTab = tab.getPosition();
-                        if (numTab == 1){ // Si tu l'utilisateur a cliqué sur l'onglet favoris
-                            mPagerAdapter = new ListNeighbourPagerAdapter(getSupportFragmentManager());
-                            mPagerAdapter.setFavorite(true);
-                            mViewPager.setAdapter(mPagerAdapter);
-                            mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
-
-
-
-
-                        }
-
-                    }
-                });*/
 
     }
 

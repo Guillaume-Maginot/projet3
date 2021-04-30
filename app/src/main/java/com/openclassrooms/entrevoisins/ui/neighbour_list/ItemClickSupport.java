@@ -73,12 +73,7 @@ public class ItemClickSupport {
         return this;
     }
 
-    public ItemClickSupport setOnItemLongClickListener(OnItemLongClickListener listener) {
-        mOnItemLongClickListener = listener;
-        return this;
-    }
-
-    private void detach(RecyclerView view) {
+     private void detach(RecyclerView view) {
         view.removeOnChildAttachStateChangeListener(mAttachListener);
         view.setTag(mItemID, null);
     }

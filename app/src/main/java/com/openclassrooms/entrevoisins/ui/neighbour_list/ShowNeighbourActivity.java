@@ -11,24 +11,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.openclassrooms.entrevoisins.service.DummyNeighbourApiService;
 
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.model.Neighbour;
+import com.openclassrooms.entrevoisins.service.DummyNeighbourGenerator;
+import com.openclassrooms.entrevoisins.service.NeighbourApiService;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ShowNeighbourActivity extends AppCompatActivity {
-    private static Neighbour mNeighbour;
+
+    private static final String EXTRA_NEIGHBOUR = "EXTRA_NEIGHBOUR";
 
     // Navigate fait la jonction entre l'activité showneighbour.class
 
     public static void navigate(FragmentActivity activity, Neighbour neighbour) {
-        mNeighbour = neighbour; // On récupère ici le neighbour séléctionné
-        // L'intent est une description abstraite d'une opération à réaliser
         Intent intent = new Intent(activity, ShowNeighbourActivity.class);
-
-        //TODO : Découvrir comment on passe un élément (Neighbour) à une autre activity, via un intent
+        intent.putExtra(EXTRA_NEIGHBOUR, neighbour);
 
         // L'intent permet de démarrer l'activity ShowNeighbourActivity.class
         // La méthode startActivity lance la méthode onCreate
@@ -41,7 +44,9 @@ public class ShowNeighbourActivity extends AppCompatActivity {
         // Le setContentView cherche et déclenche le layout activity_show_neighbour
         setContentView(R.layout.activity_show_neighbour);
 
-        displayNeighbour(mNeighbour);
+        Neighbour neighbour = (Neighbour) getIntent().getSerializableExtra(EXTRA_NEIGHBOUR);
+
+        displayNeighbour(neighbour);
 
         FloatingActionButton button;
 
@@ -49,14 +54,9 @@ public class ShowNeighbourActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // ListNeighbourActivity();
-                finish();
+              finish();
             }
 
-            public void ListNeighbourActivity() {
-                Intent intent = new Intent(ShowNeighbourActivity.this, ListNeighbourActivity.class);
-                startActivity(intent);
-            }
         });
 
         FloatingActionButton btnFavorite;
@@ -65,19 +65,19 @@ public class ShowNeighbourActivity extends AppCompatActivity {
         btnFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mNeighbour.getIsFavorite() == false) {
-                    mNeighbour.setIsFavorite(true);
-                }
-                else
-                {
-                if (mNeighbour.getIsFavorite() == true) {
-                    mNeighbour.setIsFavorite(false);
+                if (neighbour.getIsFavorite() == false) {
+                    neighbour.setIsFavorite(true);
                 } else {
-                    mNeighbour.setIsFavorite(true);
-                }}
+                    if (neighbour.getIsFavorite() == true) {
+                        neighbour.setIsFavorite(false);
+                    } else {
+                        neighbour.setIsFavorite(true);
+                    }
+                }
+                
             }
 
-            });
+        });
     }
 
     // Déclaration d'une méthode privée qui attend un objet de type Neighbour
@@ -92,21 +92,12 @@ public class ShowNeighbourActivity extends AppCompatActivity {
         final TextView tvaddress_neigh = (TextView) findViewById(R.id.address_neigh);
         tvaddress_neigh.setText(neighbour.getAddress());
 
-        // final TextView tvfacebook = (TextView) findViewById(R.id.facebook);
-        // tvfacebook.setText(neighbour.());
-
         final TextView tvaboutme = (TextView) findViewById(R.id.aboutme);
         tvaboutme.setText(neighbour.getAboutMe());
 
     }
 
-
-
-
-
-
-
-    }
+}
 
 
 

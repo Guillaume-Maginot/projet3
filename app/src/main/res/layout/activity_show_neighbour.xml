@@ -48,64 +48,64 @@
                 android:backgroundTint="#FFC107"
                 app:srcCompat="@drawable/ic_star_white_24dp" />
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/mNameuser"
-            android:layout_width="380dp"
-            android:layout_height="150dp"
-            android:layout_marginLeft="15dp"
-            android:text="Caroline"
-            android:touchscreenBlocksFocus="true"
-            app:cardCornerRadius="20dp">
+            <android.support.v7.widget.CardView
+                android:id="@+id/mNameuser"
+                android:layout_width="340dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:text="Caroline"
+                android:touchscreenBlocksFocus="true"
+                app:cardCornerRadius="20dp">
 
-            <TextView
-                android:id="@+id/firstname"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="-100dp"
-                android:text="@string/name_neighbour"
-                android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/firstname"
+                    android:layout_width="340dp"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:text="@string/name_neighbour"
+                    android:textSize="24sp" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:padding="30dp"
-                app:srcCompat="@drawable/ic_location" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:padding="30dp"
+                    app:srcCompat="@drawable/ic_location" />
 
-            <TextView
-                android:id="@+id/address_neigh"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
+                <TextView
+                    android:id="@+id/address_neigh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
 
-                android:padding="30dp"
-                android:text="@string/address_neigh" />
+                    android:padding="30dp"
+                    android:text="@string/address_neigh" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="52dp"
-                android:padding="28dp"
-                app:srcCompat="@drawable/ic_phone" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="52dp"
+                    android:padding="28dp"
+                    app:srcCompat="@drawable/ic_phone" />
 
-            <TextView
-                android:id="@+id/phoneNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="82dp"
-                android:padding="10dp"
-                android:text="@string/phone_number" />
+                <TextView
+                    android:id="@+id/phoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="82dp"
+                    android:padding="10dp"
+                    android:text="@string/phone_number" />
 
             </android.support.v7.widget.CardView>
 
         <!-- A CardView that contains a TextView -->
             <android.support.v7.widget.CardView
                 android:id="@+id/loisir_neighbour"
-                android:layout_width="380dp"
+                android:layout_width="340dp"
                 android:layout_height="150dp"
-                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 app:cardCornerRadius="20dp">
 
@@ -113,7 +113,8 @@
                     android:id="@+id/loisir"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="20dp"
+                    android:layout_marginLeft="10dp"
+
                     android:text="A propos de moi"
                     android:textSize="24sp" />
 
@@ -122,9 +123,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:foregroundTint="#2B2B2B"
-                    android:padding="20dp"
+                    android:padding="10dp"
                     android:text="@string/aboutme"
-                    android:translationY="50dp" />
+                    android:translationY="40dp" />
 
             </android.support.v7.widget.CardView>
 

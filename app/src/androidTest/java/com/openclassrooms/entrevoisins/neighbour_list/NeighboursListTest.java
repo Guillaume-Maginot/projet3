@@ -135,11 +135,7 @@ public class NeighboursListTest {
         // On vérifie que la liste des voisins est entièrement chargée et affichée
         onView(allOf(withId(R.id.list_neighbours), isDisplayed()))
                 .check(matches(isDisplayed()));
-        //TODO: rajouter une vérification avec un .check(...)
 
-        // On fait défiler vers la gauche le contenu de la liste (des favoris)
-        //Espresso.onView(withId(R.id.container))
-        //       .perform(ViewActions.swipeLeft());
 
         Espresso.onView(allOf(withText("FAVORITES")))
                 .perform(ViewActions.click());
