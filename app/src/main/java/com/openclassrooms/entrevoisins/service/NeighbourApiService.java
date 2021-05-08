@@ -33,4 +33,6 @@ public interface NeighbourApiService {
      * @param neighbour
      */
     void createNeighbour(Neighbour neighbour);
+    // Modification pour la méthode Favorite
+    void setFavoriteNeighbour(Neighbour neighbour, boolean isFavorite);
 }

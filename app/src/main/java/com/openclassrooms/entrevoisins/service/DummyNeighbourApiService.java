@@ -24,6 +24,18 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         return favorites;
     }
 
+    // Modification pour les favorites
+    @Override
+    public void setFavoriteNeighbour(Neighbour neighbour, boolean isFavorite) {
+        // La boucle for parcours la liste des voisins
+        for (Neighbour voisin:neighbours) {
+            // Si le voisin parcouru est égal au voisin passé en argument de la méthode (setFavoriteNeighbour) alors on positionne IsFavorite sur la valeur passée en paramètre
+            if (neighbour.equals(voisin)) {
+                voisin.setIsFavorite(isFavorite);
+            }
+        }
+    }
+
     /**
      * {@inheritDoc}
      */

@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.service.DummyNeighbourApiService;
 
 import com.openclassrooms.entrevoisins.R;
@@ -26,6 +28,7 @@ import butterknife.OnClick;
 public class ShowNeighbourActivity extends AppCompatActivity {
 
     private static final String EXTRA_NEIGHBOUR = "EXTRA_NEIGHBOUR";
+    private NeighbourApiService mApiService;
 
     // Navigate fait la jonction entre l'activité showneighbour.class
 
@@ -40,6 +43,7 @@ public class ShowNeighbourActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mApiService = DI.getNeighbourApiService();
         super.onCreate(savedInstanceState);
         // Le setContentView cherche et déclenche le layout activity_show_neighbour
         setContentView(R.layout.activity_show_neighbour);
@@ -67,14 +71,16 @@ public class ShowNeighbourActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (neighbour.getIsFavorite() == false) {
                     neighbour.setIsFavorite(true);
+                    mApiService.setFavoriteNeighbour(neighbour, true);
                 } else {
                     if (neighbour.getIsFavorite() == true) {
                         neighbour.setIsFavorite(false);
+                        mApiService.setFavoriteNeighbour(neighbour, false);
                     } else {
                         neighbour.setIsFavorite(true);
+                        mApiService.setFavoriteNeighbour(neighbour, true);
                     }
                 }
-                
             }
 
         });
