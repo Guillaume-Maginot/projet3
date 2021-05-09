@@ -48,20 +48,24 @@ public class NeighbourServiceTest {
         count = service.getNeighbours().size();
 
         Neighbour unVoisin = new Neighbour(999, "toto","bibi","123456789","youpi", "chabaglou");
-        List<Neighbour> neighbours = service.getNeighbours();
-        neighbours.add(unVoisin);
-        assertEquals(count + 1, neighbours.size());
+        service.createNeighbour(unVoisin);
+        assertEquals(count + 1, service.getNeighbours().size());
     }
 
     @Test
     public void addFavoriteWithSuccess() {
         int count = 0;
-        count = service.getNeighbours().size();
+        count = service.getFavoriteNeighbours().size();
+        assertEquals(count,0); // On vérifie que la liste des favoris est vide
 
         Neighbour unVoisin = new Neighbour(999, "toto","bibi","123456789","youpi", "chabaglou");
-        unVoisin.setIsFavorite(true);
         List<Neighbour> neighbours = service.getNeighbours();
         neighbours.add(unVoisin);
-        assertEquals(count + 1, neighbours.size());
+        count = service.getFavoriteNeighbours().size();
+        assertEquals(count,0); // On vérifie que la liste des favoris est vide
+        // unVoisin.setIsFavorite(true);
+        service.setFavoriteNeighbour(unVoisin, true);
+        count = service.getFavoriteNeighbours().size();
+        assertEquals(count,1);
     }
 }
