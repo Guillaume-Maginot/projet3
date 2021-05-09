@@ -76,10 +76,8 @@ public class ShowNeighbourActivity extends AppCompatActivity {
                     if (neighbour.getIsFavorite() == true) {
                         neighbour.setIsFavorite(false);
                         mApiService.setFavoriteNeighbour(neighbour, false);
-                    } else {
-                        neighbour.setIsFavorite(true);
-                        mApiService.setFavoriteNeighbour(neighbour, true);
                     }
+
                 }
             }
 
