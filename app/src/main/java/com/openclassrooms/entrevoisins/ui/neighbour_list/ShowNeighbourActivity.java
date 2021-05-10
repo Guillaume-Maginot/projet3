@@ -98,7 +98,7 @@ public class ShowNeighbourActivity extends AppCompatActivity {
 
         final TextView tvaboutme = (TextView) findViewById(R.id.aboutme);
         tvaboutme.setText(neighbour.getAboutMe());
-    // Test commentaire pour github Desktop
+    
     }
 
 }
