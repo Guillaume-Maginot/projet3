@@ -1,0 +1,3 @@
+https://github.com/Guillaume-Maginot/projet3.git
+
+Le fichier README.MD peut être consulté à la racine du repository GitHub.com

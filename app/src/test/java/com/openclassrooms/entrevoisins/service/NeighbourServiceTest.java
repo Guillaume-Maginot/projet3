@@ -60,7 +60,7 @@ public class NeighbourServiceTest {
 
         Neighbour unVoisin = new Neighbour(999, "toto","bibi","123456789","youpi", "chabaglou");
         List<Neighbour> neighbours = service.getNeighbours();
-        neighbours.add(unVoisin);
+        service.createNeighbour(unVoisin);
         count = service.getFavoriteNeighbours().size();
         assertEquals(count,0); // On vérifie que la liste des favoris est vide
         // unVoisin.setIsFavorite(true);
